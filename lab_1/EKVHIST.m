@@ -1,7 +1,9 @@
+%чтение изображения из файла
 image=imread('zeppelin_gray_light.jpg');
-
+%проверка на ЧБ и запись размера изображения
 [image,m,n]=is_gray(image);
-imshow(image,[]);
+%imshow(image,[]);
+%построение гистограммы изображения
 [h,r]=HISTOGM(image);
 tiledlayout('flow')
 subplot(2,2,1);
@@ -13,15 +15,16 @@ title("Исходное изображение");
 %subplot(2,2,2);
 %bar(r,h);
 %title("Гистограмма, построенная самостоятельно");
-
-h=h/(m*n);
+%нормализация гистограммы
+p=h/(m*n);
 subplot(2,2,3);
-bar(r,h);
+bar(r,p);
 title("Нормированная гистограмма исходного изображения");
 image_ekv=ones(m,n);
+%эквализация гистограммы
 for i=1:m
     for j=1:n
-        image_ekv(i,j)=TAU(image(i,j),h);
+        image_ekv(i,j)=TAU(image(i,j),p);
     end
 end
 

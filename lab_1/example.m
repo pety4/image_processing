@@ -1,3 +1,5 @@
+%Найденный в интернете пример эквализации гистограммы
+
 % MATLAB code for Histogram equalisation 
 % function to return resultant 
 % image: Apply on single channel only. 
