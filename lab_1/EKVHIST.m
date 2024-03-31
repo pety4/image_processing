@@ -1,5 +1,7 @@
+%добавление в path папки с изображениями
+addpath("images");
 %чтение изображения из файла
-image=imread('zeppelin_gray_light.jpg');
+image=imread('airport_light.tif');
 %проверка на ЧБ и запись размера изображения
 [image,m,n]=is_gray(image);
 %imshow(image,[]);
@@ -37,3 +39,4 @@ h_ekv=h_ekv/(m*n);
 subplot(2,2,4);
 bar(r_ekv,h_ekv);
 title("Нормированная гистограмма преобразованного изображения");
+imwrite(mat2gray(image_ekv),'lab_1\image_ekv.jpeg');
