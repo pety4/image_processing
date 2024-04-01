@@ -1,4 +1,5 @@
-function [norm_h,r]=norm_histogm(image) 
+%функция построения нормализованной гистограммы
+function [norm_h,r]=norm_histogm(image)
     addpath('lab_1\');
     [norm_h,r]=HISTOGM(image);
     [m,n]=size(image);

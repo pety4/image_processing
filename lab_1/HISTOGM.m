@@ -6,9 +6,6 @@ function [h,r]=HISTOGM(f)
     r=0:(L-1);
     %создание гистограммы
     h=zeros(L,1);
-    %image_gray=rgb2gray(image);
-    %r_min=min(f(:));
-    %r_max=max(f(:));
     %чтение размеров изображения
     [m,n] = size(f);
     %заполнение гистограммы
@@ -17,9 +14,5 @@ function [h,r]=HISTOGM(f)
             h(uint16(f(i,j))+1)=h(uint16(f(i,j))+1)+1;
         end
     end
-    %h_max=max(h(:));
 end
 
-%subplot(2,2,3);
-%imhist(image_gray); встроенная функция matlab для построения гистограмм
-%axes([0 r_max 0 h_max]) не работает

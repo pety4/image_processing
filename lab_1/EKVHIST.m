@@ -1,22 +1,16 @@
+clear all;
 %добавление в path папки с изображениями
 addpath("images");
 %чтение изображения из файла
 image=imread('airport_light.tif');
 %проверка на ЧБ и запись размера изображения
 [image,m,n]=is_gray(image);
-%imshow(image,[]);
 %построение гистограммы изображения
 [h,r]=HISTOGM(image);
 tiledlayout('flow')
 subplot(2,2,1);
 imshow(image);
 title("Исходное изображение");
-%subplot(2,2,3);
-%imhist(image);
-%title("Гистограмма, построенная матлабом")
-%subplot(2,2,2);
-%bar(r,h);
-%title("Гистограмма, построенная самостоятельно");
 %нормализация гистограммы
 p=h/(m*n);
 subplot(2,2,3);
