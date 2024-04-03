@@ -2,7 +2,7 @@ clear all;
 %добавление в path папок
 addpath("lab_1","lab_2","images");
 %чтение и проверка на ЧБ эталонного изображения
-[template_image,m_template,n_template]=is_gray(imread('runway.tif'));
+[template_image,m_template,n_template]=is_gray(imread('airport.tif'));
 %построение нормированной гистограммы эталонного изображения
 [pz,r]=norm_histogm(template_image);
 %отображение в отдельном окне эталонного изображения и его нормированной гистограммы
@@ -15,7 +15,7 @@ subplot(2,1,2);
 bar(r,pz);
 title("Нормированная гистограмма эталонного изображения");
 %чтение и проверка на ЧБ исходного изображения
-[image,m,n]=imread('runway_light.tif');
+[image,m,n]=imread('airport_light.tif');
 %отображение исходного изображения
 figure;
 tiledlayout('flow');
