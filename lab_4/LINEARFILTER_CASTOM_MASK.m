@@ -25,6 +25,5 @@ function [filtered_image] = LINEARFILTER_CASTOM_MASK(image,mask)
             filtered_image(i-a,j-b)=R;
         end
     end
-    filtered_image=mat2gray(filtered_image);
 end
 

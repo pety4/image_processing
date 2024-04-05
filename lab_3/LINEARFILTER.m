@@ -35,7 +35,5 @@ function [g] = LINEARFILTER(f)
             g(i-a,j-b)=R;
         end
     end
-    %преобразование матрицы в ЧБ изображение
-    g=mat2gray(g);
 end
 
