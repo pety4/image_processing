@@ -1,6 +1,7 @@
 clear all;
 addpath('images','lab_1');
-f=imread('terminal_dark.png');
+f_image=imread('terminal_dark.png');
+f=im2double(f_image);
 %маска Собела G_x
 w_G_x=[-1 -2 -1;
     0 0 0;
@@ -22,7 +23,7 @@ g_G_y=LINEARFILTER_CASTOM_MASK(f,w_G_y);
 g_L=LINEARFILTER_CASTOM_MASK(f,w_L);
 g_L_diag=LINEARFILTER_CASTOM_MASK(f,w_L_diag);
 figure;
-imshow(f);
+imshow(f_image);
 title('Исходное изображение');
 figure;
 imshow(mat2gray(g_G_x));
@@ -31,7 +32,7 @@ figure;
 imshow(mat2gray(g_G_y));
 title('Изображение, обработанное маской Собела G_y');
 figure;
-imshow(mat2gray(g_G_x+g_G_y));
+imshow(mat2gray(abs(g_G_x)+abs(g_G_y)));
 title('Изображение, обработанное фильтром на основе первой производной');
 figure;
 imshow(mat2gray(g_L));
